@@ -48,7 +48,7 @@
 
 ### 지역 인덱싱 (문서 기준 파티셔닝)
 
-<figure><img src="../.gitbook/assets/로컬 색인 파티션.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/로컬 색인 파티션.png" alt=""><figcaption></figcaption></figure>
 
 이 방법은 각 파티션별로 파티션 내에 저장되어 있는 데이터에 대해서 인덱싱을 하는 방식입니다. 이 경우 각 파티션마다 인덱스가 독립적이기 때문에 **지역 색인** 이라고도 합니다.
 
@@ -56,7 +56,7 @@
 
 ### 전역 인덱싱(용어 기준 파티셔닝)
 
-<figure><img src="../.gitbook/assets/용어 기준 인덱스 파티셔닝.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/용어 기준 인덱스 파티셔닝.png" alt=""><figcaption></figcaption></figure>
 
 전역 인덱싱의 경우 각 파티션마다 색인을 따로 생성하는 대신 모든 파티션의 데이터에 대한 색인을 만들고, 이 색인을 파티션들에 나눠놓는 방식으로 구현할 수 있습니다.
 

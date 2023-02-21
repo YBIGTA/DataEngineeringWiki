@@ -55,7 +55,7 @@
 
 ## 단일 리더 복제
 
-<figure><img src="../.gitbook/assets/리더-팔로워.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/리더-팔로워.png" alt=""><figcaption></figcaption></figure>
 
 여러 개의 복제 서버에서 하나의 리더와 여러 팔로워를 두고, 모든 **쓰기** 요청은 리더에서 처리하고 읽기 요청은 리더와 팔로워 모두 처리하도록 하는 방식입니다.
 
@@ -146,7 +146,7 @@
 
 ### 자신이 쓴 내용 읽기
 
-<figure><img src="../.gitbook/assets/자신이 쓴 내용 읽기.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/자신이 쓴 내용 읽기.png" alt=""><figcaption></figcaption></figure>
 
 아래와 같은 상황을 생각해 봅시다.
 
@@ -169,7 +169,7 @@
 
 ### 단조 읽기
 
-<figure><img src="../.gitbook/assets/단조 읽기.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/단조 읽기.png" alt=""><figcaption></figcaption></figure>
 
 아래와 같은 상황을 생각해 봅시다.
 
@@ -188,7 +188,7 @@
 
 ### 일관된 순서로 읽기
 
-<figure><img src="../.gitbook/assets/일관된 순서로 읽기.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/일관된 순서로 읽기.png" alt=""><figcaption></figcaption></figure>
 
 파티셔닝을 한 DB에서 일부 파티션이 다른 파티션에 비해 복제가 느리게 될 경우 관찰자 입장에서 질문을 보기 전에 대답을 볼 수 있는 **인과성 위반 우려** 가 발생할 수 있습니다.
 
@@ -218,7 +218,7 @@
 
 이를 위해서 쓰기를 허용하는 노드(리더) 를 1개 이상 두는 설정을 다중 리더 설정이라고 합니다. 이 경우 복제하는 방식은 기존과 동일하지만, 각 리더가 리더이면서 서로 다른 리더의 팔로워 역할도 하게 된다는 차이점이 있습니다.
 
-<figure><img src="../.gitbook/assets/다중 리더.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/다중 리더.png" alt=""><figcaption></figcaption></figure>
 
 단일 데이터센터일 때 다중 리더 설정을 할 경우 오히려 복잡도만 증가할 수 있으므로 보통 다중 데이터센터 환경에서 다중 리더 설정을 활용하게 되는데, 다중 데이터센터 환경에서 단일 리더 복제와 다중 리더 복제를 한 경우를 비교해 봅시다.
 
@@ -246,7 +246,7 @@
 
 ### 충돌
 
-<figure><img src="../.gitbook/assets/쓰기 충돌.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/쓰기 충돌.png" alt=""><figcaption></figcaption></figure>
 
 쓰기 충돌은 다중 리더 복제 설정이 겪는 가장 큰 문제라고 할 수 있습니다.
 
@@ -284,7 +284,7 @@
 
 리더가 없는 설정에서는 읽기/쓰기 정족수를 채울수 있는 만큼만 쓰기가 되면 충분하므로 특정 복제 서버에 장애가 발생하더라도 장애 복구를 하지 않아도 됩니다.
 
-<figure><img src="../.gitbook/assets/리더 없는 복제.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/리더 없는 복제.png" alt=""><figcaption></figcaption></figure>
 
 예를 들어 전체 3개의 복제 서버 중 2개의 서버에서 쓰기가 성공하면 쓰기 완료라고 한다면, 데이터를 읽는 과정에서 하나의 노드가 오래된 값을 반환하여도 나머지 두 노드의 값이 최신이므로 이를 반영하는 식으로 처리할 수 있습니다. 단, 이를 위해선 읽기 요청이 **병렬로 여러 노드에 전달** 되어야 합니다.
 
@@ -294,7 +294,7 @@
 
 ### 읽기 / 쓰기 정족수
 
-<figure><img src="../.gitbook/assets/읽기쓰기 정족수.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/읽기쓰기 정족수.png" alt=""><figcaption></figcaption></figure>
 
 리더 없는 복제에서 쓰기가 성공했다라고 판단할 수 있는 기준을 일반화해 보면 아래와 같은 식을 얻을 수 있습니다.
 

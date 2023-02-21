@@ -72,7 +72,7 @@
 * Task Management Tool
   * Airflow, Docker/Kubernetes 등
 
-<figure><img src="../.gitbook/assets/개요_1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/개요_1.png" alt=""><figcaption></figcaption></figure>
 
 출처 : [https://github.com/Team-Neighborhood/I-want-to-study-Data-Science/wiki/데이터-엔지니어](https://github.com/Team-Neighborhood/I-want-to-study-Data-Science/wiki/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%97%94%EC%A7%80%EB%8B%88%EC%96%B4)
 
@@ -108,7 +108,7 @@
 
 ## 3. 데이터 파이프라인의 설계
 
-<figure><img src="../.gitbook/assets/개요_2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/개요_2.png" alt=""><figcaption></figcaption></figure>
 
 ### 3.1 ETL/ELT
 

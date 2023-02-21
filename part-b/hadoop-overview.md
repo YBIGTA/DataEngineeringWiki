@@ -1,8 +1,8 @@
-# Hadoop 1
+# Hadoop Overview
 
 ## 하둡이란?
 
-<figure><img src="../.gitbook/assets/하둡_로고.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/하둡_로고.png" alt=""><figcaption></figcaption></figure>
 
 하둡은 분산 데이터를 **저장**하고 **처리**하는 기술이며, 빅데이터 처리 기술의 뿌리입니다.
 
@@ -10,7 +10,7 @@
 
 ### 하둡의 구성
 
-![](../.gitbook/assets/하둡\_구성.png)
+![](../.gitbook/assets/하둡\_구성.png)
 
 하둡은 데이터를 여러 노드에 분산시켜 저장할 수 있는 **HDFS**와 저장된 데이터에 대해 병렬로 연산을 수행할 수 있는 **맵리듀스**라는 핵심 컴포넌트로 구성됩니다.
 
@@ -36,6 +36,6 @@ Hadoop은 2006년에 더그 커팅과 마이크 캐퍼렐라가 개발했고, �
 
 ### 하둡 에코시스템
 
-<figure><img src="../.gitbook/assets/하둡_에코시스템.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/하둡_에코시스템.png" alt=""><figcaption></figcaption></figure>
 
 HDFS와 MapReduce를 기반으로 피그, 하이브, HBase, 스쿱, 플룸 등의 오픈 소스 기술이 등장했고, 이들을 모두 결합한 빅데이터 기술을 통칭하여 하둡 에코시스템이라 부릅니다.
