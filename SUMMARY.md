@@ -13,3 +13,4 @@
 ## PART C
 
 * [복제](part-c/undefined.md)
+* [파티셔닝](part-c/undefined-1.md)
