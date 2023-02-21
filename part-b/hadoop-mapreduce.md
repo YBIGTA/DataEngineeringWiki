@@ -1,9 +1,5 @@
 # Hadoop MapReduce
 
-## PART B. Hadoop 2
-
-## 맵리듀스
-
 ### 맵리듀스란?
 
 맵리듀스(MapReduce)는 대용량 데이터를 병렬 처리하는 데이터 분석 프레임워크입니다. 크게 Map과 Reduce로 나눕니다.
