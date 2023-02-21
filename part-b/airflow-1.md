@@ -4,11 +4,7 @@
 
 공식 문서에 따르면 Airflow는 아래와 같은 구조를 갖고 있습니다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/80750cdf-1ee5-45da-b49c-095b2a86eae0/Untitled.png)
-
-```
-         [<https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/overview.html>](<https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/overview.html>)
-```
+<figure><img src="../.gitbook/assets/airflow_structure_1.png" alt=""><figcaption></figcaption></figure>
 
 * Scheduler : 예약된 Worflow를 Trigger하고 실행할 작업을 실행기에 제출하는 작업을 모두 처리합니다.
 * Executor : Executor에서는 실행 중인 작업을 처리합니다.
@@ -18,7 +14,7 @@
 
 이 구성 요소들이 작동되는 flow는 아래와 같습니다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3f85b7f8-6a45-4d3d-99b7-19a7301bd618/Untitled.png)
+<figure><img src="../.gitbook/assets/airflow_structure_2.png" alt=""><figcaption></figcaption></figure>
 
 1. 사용자가 DAG Workflow를 작성하면, 스케줄러는 DAG 파일을 분석하고 각 DAG 태스크, 의존성 및 예약 주기를 확인합니다.
 2. 스케줄러는 마지막 DAG까지 내용을 확인한 후 DAG의 예약 주기가 경과 했는지 확인합니다. 예약 주기가 현재 시간 이전이라면 실행되도록 예약합니다.
@@ -29,7 +25,7 @@
 
 Airflow를 사용한 파이프라인에서는 하나 이상의 단계로 구성된 대규모 작업을 개별 태스크로 분할하고 DAG로 형성합니다. 이때 각 태스크를 정의할 때 필요한 것이 Operator입니다. (사실상 Operator와 태스크는 사용자 관점에서는 같은 의미입니다. 그러나 조금 분리해서 설명드리자면 코드로 작성된 Operator가 실행되면 하나의 태스크가 생성 된다고 이해하시면 될 것 같습니다.) 결론적으로 Airflow DAG 내부에서 의존성이 부여된 Operator가 실행되는 것이 코드의 관점에서 Airflow가 동작하는 방식입니다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8cf4c1a4-0f20-451a-946f-59ceb1728da0/Untitled.png)
+<figure><img src="../.gitbook/assets/airflow_structure_3.png" alt=""><figcaption></figcaption></figure>
 
 ## 의존성 부여
 
@@ -37,7 +33,7 @@ Airflow에서 태스크 사이에 실행 순서, 즉 의존성을 부여하는 �
 
 > 예시 1
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/848a46ae-bdb6-4f5e-b6bd-8ff33a603917/Untitled.png)
+![Untitled](../.gitbook/assets/airflow\_structure\_4.png)
 
 ```python
 Task1 >> Task2 >> Task3
@@ -45,7 +41,7 @@ Task1 >> Task2 >> Task3
 
 > 예시 2
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1c981c52-f6d3-4ba5-ac79-3aa392b79f08/Untitled.png)
+![Untitled](../.gitbook/assets/airflow\_structure\_5.png)
 
 ```python
 Task1 >> [Task2, Task3] >> Task4
@@ -55,7 +51,7 @@ Task1 >> [Task2, Task3] >> Task4
 
 앞에서 DAG, Operator, 의존성 부여에 대해 설명해드렸습니다. 이를 기반으로 이번에는 매우 간단한 코드 예시를 통해 코드로서 이러한 개념들이 어떻게 구현되는지 살표보고 앞에서 이해 못했던 내용들을 채워보도록 합시다. 먼저 저희가 구현하고자 하는 Workflow 입니다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/65ee8aed-f99f-41cb-a6f7-bc5185e31cb7/Untitled.png)
+![Untitled](../.gitbook/assets/airflow\_structure\_6.png)
 
 이러한 Worflow를 구현하기 위한 코드입니다. 참고로, 구체적인 파이썬 구현과 Airflow를 위해 입력해야할 설정 값들은 모두 생략했습니다.
 
@@ -183,41 +179,25 @@ Airflow 는 앞에서 설명했듯이 DAG를 확인하고 실행 결과에 대�
 
 > 현재 사용가능한 DAG와 최근 실행 결과에 대한 내용을 보여주는 Airflow의 웹 인터페이스의 메인 페이지
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/54c24ded-2bfe-4ab6-bab7-071d8a0945cd/Untitled.png)
-
-```
-                          [<https://airflow.apache.org/docs/apache-airflow/stable/ui.html>](<https://airflow.apache.org/docs/apache-airflow/stable/ui.html>)
-```
+![Untitled](../.gitbook/assets/airflow\_structure\_7.png)
 
 Airflow 웹 인터페이스의 메인 페이지에서는 DAG 항목 아래에 여러분이 만든 Workflow 이름을 확인할 수 있습니다. 또한, Schdule 항목 아래에는 cron형태로 해당 Workflow의 스케줄을 확인할 수 있고, Recent Tasks 항목에서는 최근 실행한 워크플로 태스크 상태에 대한 정보가 있습니다.
 
 > 시간에 따른 DAG의 실행 결과를 보여주는 Grid View
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/edfe1d4c-6523-46a4-98ca-a8f917b1a7cc/Untitled.png)
-
-```
-                           [<https://airflow.apache.org/docs/apache-airflow/stable/ui.html>](<https://airflow.apache.org/docs/apache-airflow/stable/ui.html>)
-```
+![Untitled](../.gitbook/assets/airflow\_structure\_8.png)
 
 DAG의 막대 차트는 DAG이 실행된 시간을 보여주고 아래의 Grid 형태의 내용들은 하나의 Task 의 상태를 의미합니다. GridView를 통해 파이프라인 안에서 Task 들이 어떻게 작동했는지 한 눈에 쉽게 파악할 수 있습니다.
 
 > 태스크 내용과 태스크 간의 의존성을 보여주는 Airflow 웹 인터페이스의 Graph View
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5e339a37-210a-47f1-8d68-a7118f02dd21/Untitled.png)
-
-```
-                         [<https://airflow.apache.org/docs/apache-airflow/stable/ui.html>](<https://airflow.apache.org/docs/apache-airflow/stable/ui.html>)
-```
+![Untitled](../.gitbook/assets/airflow\_structure\_9.png)
 
 개별 DAG의 태스크와 의존성에 대한 Graph View 화면을 제공합니다. 이 View는 태스크 간의 의존성에 대한 세세한 정보를 제공함으로써 DAG의 구조를 파악할 수 있게 해주고, 개별 DAG에 대한 실행 결과를 확인하는 데 유용합니다.
 
 > DAG의 history 내역을 보여주는 Calendar View
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7e560fd3-38a0-4134-9b09-4d56481f16aa/Untitled.png)
-
-```
-                          [<https://airflow.apache.org/docs/apache-airflow/stable/ui.html>](<https://airflow.apache.org/docs/apache-airflow/stable/ui.html>)
-```
+![Untitled](../.gitbook/assets/airflow\_structure\_10.png)
 
 Calendar View는 몇 달이나 몇 년에 걸친 DAG의 실행 history를 제공합니다. 이를 통해 실행되는 DAG의 전반적인 성공, 실패의 추세를 빠르게 파악할 수 있습니다.
 

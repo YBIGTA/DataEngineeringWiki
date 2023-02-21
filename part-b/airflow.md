@@ -1,6 +1,6 @@
 # Airflow 개요
 
-## ![](../.gitbook/assets/airflow\_overview\_1.png)
+## ![](<../.gitbook/assets/airflow\_overview\_1 (1).png>)
 
 ## Airflow 소개
 
@@ -24,7 +24,7 @@ Airflow는 데이터 파이프라인을 처리하기 위한 배치 테스크(bat
 
 Airflow는 UI를 제공하여 데이터 파이프라인에서 사용되는 여러 기능들을 쉽게 모니터링 가능합니다. 파이프라인에서 문제가 생길 시 어디에서 문제가 생긴지 빠르게 파악하고 로그를 통해 구체적인 내용들을 확인하여 대처할 수 있는 것이죠.
 
-<figure><img src="../.gitbook/assets/airflow_overview_2.png" alt=""><figcaption><p><a href="https://airflow.apache.org/docs/apache-airflow/stable/index.html">https://airflow.apache.org/docs/apache-airflow/stable/index.html</a></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/airflow_overview_2 (1).png" alt=""><figcaption><p><a href="https://airflow.apache.org/docs/apache-airflow/stable/index.html">https://airflow.apache.org/docs/apache-airflow/stable/index.html</a></p></figcaption></figure>
 
 1. Scheduling
 
@@ -34,11 +34,11 @@ Airflow는 UI를 제공하여 데이터 파이프라인에서 사용되는 여�
 
 Airflow는 Workflow 구축하고 실행할 수 있는 플랫폼이고 Workflow 내부의 각 작업들을 DAG(Directed Acyclic Graph)를 통해 구조화 합니다. DAG이란 아래와 같이 순환하는 싸이클이 존재하지 않고, 일방향성만을 갖고 있는 비순환 구조로 되어 있는 그래프를 의미합니다.
 
-<figure><img src="../.gitbook/assets/airflow_overview_3.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/airflow_overview_3 (1).png" alt=""><figcaption></figcaption></figure>
 
 위에서 언급했듯이 Airflow는 Worflow를 오케스트레이션하는 프로그램이므로 EDA(Event Driven Architecture)로서 각 작업들은 DAG의 구조를 보이게 됩니다. DAG는 작업 간의 종속성과 이를 실행하는 순서를 지정합니다. 작업 자체는 데이터 가져오기, 분석 실행, 다른 시스템 트리거 등 무엇을 해야 하는지 설명합니다.아래는 Ariflow 공식 문서에 나와 있는 DAG 구조의 예시입니다.
 
-<figure><img src="../.gitbook/assets/airflow_overview_4.png" alt=""><figcaption><p><a href="https://airflow.apache.org/docs/apache-airflow/stable/_images/edge_label_example.png">https://airflow.apache.org/docs/apache-airflow/stable/_images/edge_label_example.png</a></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/airflow_overview_4 (1).png" alt=""><figcaption><p><a href="https://airflow.apache.org/docs/apache-airflow/stable/_images/edge_label_example.png">https://airflow.apache.org/docs/apache-airflow/stable/_images/edge_label_example.png</a></p></figcaption></figure>
 
 위 예시에서는 첫 번째 작업인 ingest부터 마지막 작업인 report까지 순차적으로 작업이 실행됩니다. 중간에 check\_integrity라는 이름의 작업은 Error를 발생을 기준으로 분기하여 Task를 진행합니다.
 
