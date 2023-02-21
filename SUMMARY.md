@@ -4,11 +4,11 @@
 
 ## PART A
 
-* [Page 1](part-a/page-1.md)
+* [데이터 엔지니어링이란?](part-a/undefined.md)
 
 ## PART B
 
-* [Hadoop 1](part-b/hadoop-1.md)
+* [Hadoop Overview](part-b/hadoop-overview.md)
 
 ## PART C
 
