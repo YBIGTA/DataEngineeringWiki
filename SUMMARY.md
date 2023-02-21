@@ -8,7 +8,7 @@
 
 ## PART B
 
-* [Page 1](part-b/page-1.md)
+* [Hadoop 1](part-b/hadoop-1.md)
 
 ## PART C
 
