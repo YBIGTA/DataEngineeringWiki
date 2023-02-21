@@ -12,4 +12,4 @@
 
 ## PART C
 
-* [Page 1](part-c/page-1.md)
+* [복제](part-c/undefined.md)
